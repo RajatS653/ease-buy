@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "243829480816",
+    "project_id": "ease-buy",
+    "storage_bucket": "ease-buy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:243829480816:android:fe6ba8c982a8212b9203b5",
+        "android_client_info": {
+          "package_name": "com.example.ease_buy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApEekaCgYrXpu58EIlNyoknzpWiUeDmEI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
