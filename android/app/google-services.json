@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "243829480816",
+    "project_id": "ease-buy",
+    "storage_bucket": "ease-buy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:243829480816:android:fe6ba8c982a8212b9203b5",
+        "android_client_info": {
+          "package_name": "com.example.ease_buy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "243829480816-p6s6qa6abvh3glath2r9i0tevrekpk9n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ease_buy",
+            "certificate_hash": "f211839679a4fc838f5b61d50efd1e044cfe6b9c"
+          }
+        },
+        {
+          "client_id": "243829480816-ner53b5eia9brhra4m7fuit16taqa5dt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApEekaCgYrXpu58EIlNyoknzpWiUeDmEI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "243829480816-ner53b5eia9brhra4m7fuit16taqa5dt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
