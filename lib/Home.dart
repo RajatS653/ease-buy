@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'Bottom_Nav.dart';
 import 'Home_Products_View.dart';
 import 'search.dart';
 
@@ -110,8 +111,16 @@ class _Home_ScreenState extends State<Home_Screen> {
                         ),
                       ),
                       Spacer(),
-                      Icon(Icons.shopping_cart_outlined,
-                          size: 30, color: Color.fromARGB(255, 150, 10, 10)),
+                      InkWell(
+                        onTap: () {
+                          Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) {
+                            return AllScreen(index: 2);
+                          },), (route) => false);
+                          print("cart");
+                        },
+                        child: Icon(Icons.shopping_cart_outlined,
+                            size: 30, color: Color.fromARGB(255, 150, 10, 10)),
+                      ),
                     ],
                   ),
                 ),

@@ -237,15 +237,20 @@ class _Home_Products_ViewState extends State<Home_Products_View> {
             ),
           ),
           GestureDetector(
-            onTap: () {
+            onTap: () { if(H_controller.Cart.contains(H_controller.DoneDataList![H_controller.product_Id - 1]['id'])){
+              Fluttertoast.showToast(msg: "Already in cart");
+            }
+
+             else{
               H_controller.add_Cart(
                   H_controller.DoneDataList![H_controller.product_Id - 1]['id']);
-              print(H_controller.DoneDataList![H_controller.product_Id - 1]['id']);
+                H_controller.Cart_total(H_controller.DoneDataList![H_controller.product_Id - 1]['price']);
               Fluttertoast.showToast(
                 msg: "Added to Cart",
                 backgroundColor: Colors.white,
                 textColor: Colors.black,
               );
+            }
             },
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),

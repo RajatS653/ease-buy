@@ -19,7 +19,7 @@ class _Shop_ScreenState extends State<Shop_Screen> {
 
   void printSelectedCategory() {
     if (selectedIndex != -1) {
-      print("Selected category: ${Cat_Controller.Categories![selectedIndex]}"); }
+      print("Selected category: ${Cat_Controller.Categories![selectedIndex]['name']}"); }
   }
 
   @override
@@ -53,8 +53,8 @@ class _Shop_ScreenState extends State<Shop_Screen> {
                     )))
           ],
         ),
-        body: StreamBuilder(
-          stream: Cat_Controller.CatApiCall().asStream(),
+        body: FutureBuilder(
+          future: Cat_Controller.CatApiCall(),
           builder: (context, snapshot) {
             return Cat_Controller.Categories!.isEmpty
                 ? Center(
@@ -64,7 +64,7 @@ class _Shop_ScreenState extends State<Shop_Screen> {
                   )
                 : FutureBuilder(
                     future: Cat_Controller.Cat_Data_ApiCall(
-                            Cat_Controller.Categories![selectedIndex]),
+                            Cat_Controller.Categories![selectedIndex]['name'].toString()),
                     builder: (context, snapshot) {
                       return ListView(
                         children: [
@@ -144,7 +144,7 @@ class _Shop_ScreenState extends State<Shop_Screen> {
                                       },
                                       child: Chip(
                                         label: Text(
-                                            Cat_Controller.Categories![index]),
+                                            Cat_Controller.Categories![index]['name']),
                                         padding: EdgeInsets.zero,
                                         labelStyle: GoogleFonts.roboto(
                                           fontSize: 15,

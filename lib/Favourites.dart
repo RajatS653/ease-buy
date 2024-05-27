@@ -37,7 +37,6 @@ class _Favourites_ScreenState extends State<Favourites_Screen> {
               return Expanded(
                 child: GridView.builder(
                   itemCount: value.Favourites.length,
-
                   shrinkWrap: true,
                   scrollDirection: Axis.vertical,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

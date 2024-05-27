@@ -21,29 +21,21 @@ class Home_control extends GetxController {
       if (response.statusCode == 200) {
         data = await jsonDecode(response.body.toString());
         DoneDataList = data!['products'];
-
         //Add Categorised data into the empty Categories list
-        if (smartphones.isEmpty) {
+        if (recommended.isEmpty) {
           // for add the data only one time
           for (int i = 0; i < DoneDataList!.length; i++) {
-            if (DoneDataList![i]['category'] == 'smartphones') {
-              Check_Smartphones(i);
-              Recommended(i);
-            }
-            if (DoneDataList![i]['category'] == 'laptops') {
-              Check_Laptops(i);
-              Recommended(i);
-            }
             if (DoneDataList![i]['category'] == 'fragrances') {
-              Check_Fragrances(i);
-              AlsoLike(i);
+              Recommended(i);
             }
-            if (DoneDataList![i]['category'] == 'skincare') {
+            else if (DoneDataList![i]['category'] == 'beauty') {
               Check_Skincare(i);
             }
-            if (DoneDataList![i]['category'] == 'home-decoration') {
-              Check_Home_Decoration(i);
+            else if (DoneDataList![i]['category'] == 'groceries') {
               AlsoLike(i);
+            }
+            else{
+
             }
           }
         }
@@ -66,23 +58,6 @@ class Home_control extends GetxController {
     update();
   }
 
-  late List smartphones = [];
-  Check_Smartphones(int index) {
-    smartphones.add(index);
-    update();
-  }
-
-  late List laptops = [];
-  Check_Laptops(int index) {
-    laptops.add(index);
-    update();
-  }
-
-  late List fragrances = [];
-  Check_Fragrances(int index) {
-    fragrances.add(index);
-    update();
-  }
 
   late List skincare = [];
   Check_Skincare(int index) {
@@ -90,11 +65,6 @@ class Home_control extends GetxController {
     update();
   }
 
-  late List home_Decoration = [];
-  Check_Home_Decoration(int index) {
-    home_Decoration.add(index);
-    update();
-  }
 
   late int product_Id;
   late String product_Des;
@@ -116,13 +86,26 @@ class Home_control extends GetxController {
   }
 
   late List Cart = [];
+
+
   void add_Cart(int id) {
+
     Cart.add(id);
+
     update();
   }
 
-  void remove_Cart(int id) {
+
+  late double total = 0;
+  void Cart_total(double price){
+    total = total+price;
+    update();
+  }
+
+
+  void remove_Cart(int id, double price) {
     Cart.remove(id);
+    total = total-price;
     update();
   }
 
